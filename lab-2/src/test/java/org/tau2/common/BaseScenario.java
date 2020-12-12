@@ -27,13 +27,17 @@ public class BaseScenario {
 	@Before
 	public void setup(Scenario scenario) {
 		log.info("STARTING NEW SCENARIO");
-		scenario.log("Scenario - " + scenario.getName() + " - started at: " + new Date());
+		String msg = "Scenario - " + scenario.getName() + " - started at: " + new Date();
+		scenario.log(msg);
+		log.info(msg);
 	}
 
 	@After
 	public void tearDown(Scenario scenario) {
 		DriverBase.cleanupDriver();
-		scenario.log("Scenario - " + scenario.getName() + " - ended at: " + new Date());
+		String msg = "Scenario - " + scenario.getName() + " - ended at: " + new Date();
+		scenario.log(msg);
+		log.info(msg);
 		log.info("/////////////////////////////////////////////////////////////////////////");
 	}
 }
