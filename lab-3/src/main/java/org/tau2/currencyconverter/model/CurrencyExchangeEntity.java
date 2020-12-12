@@ -1,15 +1,39 @@
 package org.tau2.currencyconverter.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class CurrencyExchangeEntity {
 
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String fromCode;
 	private String toCode;
 	private double convertRate;
+
+	public CurrencyExchangeEntity() {
+	}
 
 	public CurrencyExchangeEntity(String from, String toCode, double convertRate) {
 		this.fromCode = from;
 		this.toCode = toCode;
 		this.convertRate = convertRate;
+	}
+
+	public CurrencyExchangeEntity(Long id, String fromCode, String toCode, double convertRate) {
+		this(fromCode, toCode, convertRate);
+		this.id = id;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getFromCode() {
