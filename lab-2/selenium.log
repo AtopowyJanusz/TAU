@@ -1,0 +1,72 @@
+2020-12-12 18:33:53,977 [main] INFO org.tau2.util.DriverBase - Getting web driver...
+2020-12-12 18:33:53,979 [main] INFO org.tau2.util.DriverBase - Initializing web driver...
+2020-12-12 18:33:56,344 [main] INFO org.tau2.util.DriverBase - Web driver initialized: firefox
+2020-12-12 18:33:56,345 [main] INFO org.tau2.common.BaseScenario - STARTING NEW SCENARIO
+2020-12-12 18:33:56,356 [main] INFO org.tau2.common.BaseScenario - Scenario - Passing incorrect login data - started at: Sat Dec 12 18:33:56 CET 2020
+2020-12-12 18:33:56,363 [main] INFO org.tau2.common.BaseScenario - Opening: https://github.com/login
+2020-12-12 18:33:57,769 [main] INFO org.tau2.util.DriverBase - Getting web driver...
+2020-12-12 18:33:57,770 [main] INFO org.tau2.website.github.LoginSteps - Enter login: randomlogin@w
+2020-12-12 18:33:58,323 [main] INFO org.tau2.website.github.LoginSteps - Enter password: randompassword
+2020-12-12 18:33:58,876 [main] INFO org.tau2.website.github.LoginSteps - Clicking login
+2020-12-12 18:33:59,826 [main] INFO org.tau2.website.github.LoginSteps - Verifying error
+2020-12-12 18:34:00,403 [main] INFO org.tau2.util.DriverBase - Closing web driver...
+2020-12-12 18:34:00,849 [main] INFO org.tau2.util.DriverBase - Web driver closed.
+2020-12-12 18:34:00,849 [main] INFO org.tau2.common.BaseScenario - Scenario - Passing incorrect login data - ended at: Sat Dec 12 18:34:00 CET 2020
+2020-12-12 18:34:00,849 [main] INFO org.tau2.common.BaseScenario - /////////////////////////////////////////////////////////////////////////
+2020-12-12 18:34:00,857 [main] INFO org.tau2.util.DriverBase - Getting web driver...
+2020-12-12 18:34:00,857 [main] INFO org.tau2.util.DriverBase - Initializing web driver...
+2020-12-12 18:34:02,712 [main] INFO org.tau2.util.DriverBase - Web driver initialized: firefox
+2020-12-12 18:34:02,712 [main] INFO org.tau2.common.BaseScenario - STARTING NEW SCENARIO
+2020-12-12 18:34:02,713 [main] INFO org.tau2.common.BaseScenario - Scenario - We can navigate to lost password site - started at: Sat Dec 12 18:34:02 CET 2020
+2020-12-12 18:34:02,713 [main] INFO org.tau2.common.BaseScenario - Opening: https://github.com/login
+2020-12-12 18:34:03,971 [main] INFO org.tau2.util.DriverBase - Getting web driver...
+2020-12-12 18:34:03,972 [main] INFO org.tau2.website.github.LoginSteps - Checking if: Forgot password? exists
+2020-12-12 18:34:04,489 [main] INFO org.tau2.website.github.LoginSteps - Navigating to link: Forgot password?
+2020-12-12 18:34:05,301 [main] INFO org.tau2.website.github.LoginSteps - Checking if header text: Reset your password exists
+2020-12-12 18:34:05,319 [main] INFO org.tau2.util.DriverBase - Closing web driver...
+2020-12-12 18:34:07,892 [main] INFO org.tau2.util.DriverBase - Web driver closed.
+2020-12-12 18:34:07,893 [main] INFO org.tau2.common.BaseScenario - Scenario - We can navigate to lost password site - ended at: Sat Dec 12 18:34:07 CET 2020
+2020-12-12 18:34:07,894 [main] INFO org.tau2.common.BaseScenario - /////////////////////////////////////////////////////////////////////////
+2020-12-12 18:34:07,909 [main] INFO org.tau2.util.DriverBase - Getting web driver...
+2020-12-12 18:34:07,909 [main] INFO org.tau2.util.DriverBase - Initializing web driver...
+2020-12-12 18:34:09,972 [main] INFO org.tau2.util.DriverBase - Web driver initialized: firefox
+2020-12-12 18:34:09,972 [main] INFO org.tau2.common.BaseScenario - STARTING NEW SCENARIO
+2020-12-12 18:34:09,973 [main] INFO org.tau2.common.BaseScenario - Scenario - We can navigate to account creation page - started at: Sat Dec 12 18:34:09 CET 2020
+2020-12-12 18:34:09,973 [main] INFO org.tau2.common.BaseScenario - Opening: https://github.com/login
+2020-12-12 18:34:11,596 [main] INFO org.tau2.util.DriverBase - Getting web driver...
+2020-12-12 18:34:11,596 [main] INFO org.tau2.website.github.LoginSteps - Checking if: Create an account exists
+2020-12-12 18:34:12,125 [main] INFO org.tau2.website.github.LoginSteps - Navigating to link: Create an account
+2020-12-12 18:34:14,097 [main] INFO org.tau2.website.github.LoginSteps - Checking if header text: Create your account exists
+2020-12-12 18:34:14,139 [main] INFO org.tau2.util.DriverBase - Closing web driver...
+2020-12-12 18:34:14,604 [main] INFO org.tau2.util.DriverBase - Web driver closed.
+2020-12-12 18:34:14,604 [main] INFO org.tau2.common.BaseScenario - Scenario - We can navigate to account creation page - ended at: Sat Dec 12 18:34:14 CET 2020
+2020-12-12 18:34:14,605 [main] INFO org.tau2.common.BaseScenario - /////////////////////////////////////////////////////////////////////////
+2020-12-12 18:34:14,615 [main] INFO org.tau2.util.DriverBase - Getting web driver...
+2020-12-12 18:34:14,616 [main] INFO org.tau2.util.DriverBase - Initializing web driver...
+2020-12-12 18:34:16,667 [main] INFO org.tau2.util.DriverBase - Web driver initialized: firefox
+2020-12-12 18:34:16,667 [main] INFO org.tau2.common.BaseScenario - STARTING NEW SCENARIO
+2020-12-12 18:34:16,668 [main] INFO org.tau2.common.BaseScenario - Scenario - Price badge in all product cards - started at: Sat Dec 12 18:34:16 CET 2020
+2020-12-12 18:34:16,668 [main] INFO org.tau2.common.BaseScenario - Opening: https://lp.morele.net/alarmcenowy/
+2020-12-12 18:34:18,070 [main] INFO org.tau2.util.DriverBase - Getting web driver...
+2020-12-12 18:34:18,071 [main] INFO org.tau2.common.BaseScenario - Verifying if all elements contains price badges
+2020-12-12 18:34:18,208 [main] INFO org.tau2.common.BaseScenario - 148 products and 148 discounts
+2020-12-12 18:34:18,709 [main] INFO org.tau2.util.DriverBase - Closing web driver...
+2020-12-12 18:34:19,177 [main] INFO org.tau2.util.DriverBase - Web driver closed.
+2020-12-12 18:34:19,177 [main] INFO org.tau2.common.BaseScenario - Scenario - Price badge in all product cards - ended at: Sat Dec 12 18:34:19 CET 2020
+2020-12-12 18:34:19,177 [main] INFO org.tau2.common.BaseScenario - /////////////////////////////////////////////////////////////////////////
+2020-12-12 18:34:19,180 [main] INFO org.tau2.util.DriverBase - Getting web driver...
+2020-12-12 18:34:19,180 [main] INFO org.tau2.util.DriverBase - Initializing web driver...
+2020-12-12 18:34:21,172 [main] INFO org.tau2.util.DriverBase - Web driver initialized: firefox
+2020-12-12 18:34:21,172 [main] INFO org.tau2.common.BaseScenario - STARTING NEW SCENARIO
+2020-12-12 18:34:21,173 [main] INFO org.tau2.common.BaseScenario - Scenario - Old price on product page - started at: Sat Dec 12 18:34:21 CET 2020
+2020-12-12 18:34:21,173 [main] INFO org.tau2.common.BaseScenario - Opening: https://lp.morele.net/alarmcenowy/
+2020-12-12 18:34:22,555 [main] INFO org.tau2.util.DriverBase - Getting web driver...
+2020-12-12 18:34:22,555 [main] INFO org.tau2.common.BaseScenario - Getting product link and old price
+2020-12-12 18:34:23,154 [main] INFO org.tau2.common.BaseScenario - Navigating to selected random product: https://www.morele.net/laptop-lenovo-thinkpad-x13-g1-20t2002spb-6958136/
+2020-12-12 18:34:25,491 [main] INFO org.tau2.common.BaseScenario - Verifying if old price on alarm page matches brutto price on product page
+2020-12-12 18:34:25,577 [main] INFO org.tau2.common.BaseScenario - Old alarm price: 6499
+2020-12-12 18:34:25,577 [main] INFO org.tau2.common.BaseScenario - Brutto page price before discount code: 6499
+2020-12-12 18:34:25,577 [main] INFO org.tau2.util.DriverBase - Closing web driver...
+2020-12-12 18:34:26,161 [main] INFO org.tau2.util.DriverBase - Web driver closed.
+2020-12-12 18:34:26,162 [main] INFO org.tau2.common.BaseScenario - Scenario - Old price on product page - ended at: Sat Dec 12 18:34:26 CET 2020
+2020-12-12 18:34:26,162 [main] INFO org.tau2.common.BaseScenario - /////////////////////////////////////////////////////////////////////////
