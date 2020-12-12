@@ -42,13 +42,14 @@ public class PriceAlarmSteps {
 	@When("Pick random product link and old price")
 	public void pickRandomProductLinkAndOldPrice() {
 		log.info("Getting product link and old price");
+		Sleeper.siesta(2000L);
 		List<WebElement> products = driver.findElements(By.className("productItemData"));
 		Random random = new Random();
-		WebElement randomProduct = products.get(random.nextInt(products.size() + 1));
+		WebElement randomProduct = products.get(random.nextInt(10) + 1);
 		linkToRandomProduct = randomProduct.findElement(By.className("product-link")).getAttribute("href");
 		WebElement oldPriceElement = randomProduct.findElement(By.className("price-old"));
-		WebDriverWait wait = new WebDriverWait(driver, 15);
-		wait.until((ExpectedCondition<Boolean>) webDriver -> oldPriceElement.getText().length() != 0);
+		WebDriverWait wait = new WebDriverWait(driver, 25);
+		wait.until((ExpectedCondition<Boolean>) webDriver -> oldPriceElement.getText().trim().length() != 0);
 		oldAlarmPagePrice = oldPriceElement.getText()
 				.replace(" ", "")
 				.replace(",00", "")
