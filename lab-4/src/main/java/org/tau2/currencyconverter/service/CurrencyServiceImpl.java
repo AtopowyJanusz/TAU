@@ -8,6 +8,7 @@ import org.tau2.currencyconverter.repository.CurrencyExchangeRepository;
 import org.tau2.currencyconverter.transferObject.CurrencyExchange;
 import org.tau2.currencyconverter.transferObject.CurrencyExchangeRequest;
 import org.tau2.currencyconverter.transferObject.NewCurrencyExchange;
+import org.tau2.currencyconverter.transferObject.NewRate;
 
 import javax.persistence.EntityExistsException;
 import java.util.ArrayList;
@@ -57,5 +58,25 @@ public class CurrencyServiceImpl implements CurrencyService {
 			);
 		}
 		this.currencyExchangeRepository.save(this.modelMapper.map(currencyExchange, CurrencyExchangeEntity.class));
+	}
+
+	@Override
+	public boolean update(Long id, NewRate newRate) {
+		CurrencyExchangeEntity currencyExchangeEntity = this.currencyExchangeRepository.findById(id).orElse(null);
+		if (currencyExchangeEntity == null) {
+			return false;
+		}
+		currencyExchangeEntity.setConvertRate(newRate.getRate());
+		this.currencyExchangeRepository.save(currencyExchangeEntity);
+		return true;
+	}
+
+	@Override
+	public CurrencyExchange findCurrencyExchange(String fromCode, String toCode) {
+		CurrencyExchangeEntity currencyExchangeEntity = this.currencyExchangeRepository.findByFromCodeAndToCode(fromCode, toCode);
+		if (currencyExchangeEntity == null) {
+			return null;
+		}
+		return this.modelMapper.map(currencyExchangeEntity, CurrencyExchange.class);
 	}
 }

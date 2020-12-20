@@ -13,14 +13,21 @@ import org.tau2.currencyconverter.repository.CurrencyExchangeRepository;
 import org.tau2.currencyconverter.transferObject.CurrencyExchange;
 import org.tau2.currencyconverter.transferObject.CurrencyExchangeRequest;
 import org.tau2.currencyconverter.transferObject.NewCurrencyExchange;
+import org.tau2.currencyconverter.transferObject.NewRate;
 
 import javax.persistence.EntityExistsException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -102,5 +109,59 @@ class CurrencyServiceImplTest {
 			currencyService.save(currencyExchange);
 		});
 		verify(currencyExchangeRepository, times(0)).save(any(CurrencyExchangeEntity.class));
+	}
+
+	@Test
+	void update_should_returnFalse_when_currencyExchangeDoesNotExist() {
+		when(currencyExchangeRepository.findById(anyLong())).thenReturn(Optional.empty());
+
+		boolean res = currencyService.update(1L, new NewRate());
+		assertFalse(res);
+	}
+
+	@Test
+	void update_should_returnTrue_when_currencyExchangeDoesExist() {
+		NewRate rate = new NewRate();
+		rate.setRate(1.2d);
+		when(currencyExchangeRepository.findById(anyLong())).thenReturn(Optional.of(new CurrencyExchangeEntity()));
+
+		boolean res = currencyService.update(1L, rate);
+		assertTrue(res);
+	}
+
+	@Test
+	void findCurrencyExchange_should_returnNull_when_currencyExchangeDoesNotExist() {
+		String fromCode = "PLN";
+		String toCode = "EUR";
+		when(currencyExchangeRepository.findByFromCodeAndToCode(anyString(), anyString())).thenReturn(null);
+
+		CurrencyExchange res = currencyService.findCurrencyExchange(fromCode, toCode);
+		assertNull(res);
+	}
+
+	@Test
+	void findCurrencyExchange_should_returnCurrencyExchange_when_currencyExchangeDoesExist() {
+		Long id = 1L;
+		double rate = 1.0d;
+		String fromCode = "PLN";
+		String toCode = "EUR";
+		CurrencyExchangeEntity currencyExchangeEntity = new CurrencyExchangeEntity();
+		currencyExchangeEntity.setId(id);
+		currencyExchangeEntity.setFromCode(fromCode);
+		currencyExchangeEntity.setToCode(toCode);
+		currencyExchangeEntity.setConvertRate(rate);
+		CurrencyExchange currencyExchange = new CurrencyExchange();
+		currencyExchange.setId(id);
+		currencyExchange.setFromCode(fromCode);
+		currencyExchange.setToCode(toCode);
+		currencyExchange.setConvertRate(rate);
+		when(currencyExchangeRepository.findByFromCodeAndToCode(anyString(), anyString())).thenReturn(currencyExchangeEntity);
+
+		CurrencyExchange res = currencyService.findCurrencyExchange(fromCode, toCode);
+		assertNotNull(res);
+		assertEquals(currencyExchangeEntity.getId(), currencyExchange.getId());
+		assertEquals(currencyExchangeEntity.getFromCode(), currencyExchange.getFromCode());
+		assertEquals(currencyExchangeEntity.getToCode(), currencyExchange.getToCode());
+		assertEquals(currencyExchangeEntity.getConvertRate(), currencyExchange.getConvertRate());
 	}
 }
